@@ -7,7 +7,7 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #0f172a; /* deep slate/blue */
+  background: #0f172a;
   color: #e5e7eb;
   min-height: 100vh;
   display: flex;
@@ -61,7 +61,7 @@ body {
 /* Word span */
 .word {
   cursor: pointer;
-  padding: 0.1rem 0.2rem;
+  padding: 0.1rem 0.25rem;
   border-radius: 0.4rem;
   transition: background 0.15s ease, transform 0.1s ease;
 }
@@ -124,13 +124,27 @@ body {
   position: relative;
   background: #020617;
   border-radius: 0.9rem;
-  max-width: 420px;
+  max-width: 480px;
   width: 100%;
+  max-height: 85vh;
   padding: 1rem 1.1rem 1.2rem;
   border: 1px solid #1e293b;
   box-shadow:
     0 10px 25px rgba(15, 23, 42, 0.9),
     0 0 0 1px rgba(148, 163, 184, 0.2);
+  overflow-y: auto;
+}
+
+/* Scrollbar styling (optional) */
+.popup-card::-webkit-scrollbar {
+  width: 6px;
+}
+.popup-card::-webkit-scrollbar-track {
+  background: #020617;
+}
+.popup-card::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 999px;
 }
 
 /* Close button */
@@ -159,7 +173,7 @@ body {
 
 .popup-row strong {
   display: block;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
   font-size: 0.9rem;
   color: #9ca3af;
 }
@@ -175,11 +189,12 @@ body {
   font-family: "Scheherazade", "Amiri", "Traditional Arabic", serif;
 }
 
-/* Root / grammar / bn text */
+/* Root / analysis / bn text */
 #popup-root,
-#popup-grammar,
+#popup-analysis,
 #popup-bn {
   display: block;
+  white-space: pre-line; /* allow line breaks */
 }
 
 /* Make it mobile friendly */
