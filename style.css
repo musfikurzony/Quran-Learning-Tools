@@ -1,0 +1,200 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a; /* deep slate/blue */
+  color: #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  padding: 1rem;
+  text-align: center;
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+.app-header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.app-header p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Main content */
+.app-main {
+  padding: 1rem;
+  flex: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Ayah section */
+.ayah-section {
+  background: #020617;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #1e293b;
+}
+
+.ayah-text {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  text-align: center;
+  word-spacing: 0.4rem;
+}
+
+/* Word span */
+.word {
+  cursor: pointer;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.4rem;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.word:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+.word:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Translation section */
+.translation-section {
+  background: #020617;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.translation-section h2 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: #e5e7eb;
+}
+
+.translation-section p {
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
+
+/* Hint */
+.hint-section {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 999;
+}
+
+/* hidden helper */
+.hidden {
+  display: none;
+}
+
+/* Popup card */
+.popup-card {
+  position: relative;
+  background: #020617;
+  border-radius: 0.9rem;
+  max-width: 420px;
+  width: 100%;
+  padding: 1rem 1.1rem 1.2rem;
+  border: 1px solid #1e293b;
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(148, 163, 184, 0.2);
+}
+
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.popup-close:hover {
+  color: #e5e7eb;
+}
+
+/* Popup rows */
+.popup-row {
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+.popup-row strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Arabic word display */
+.popup-arabic {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+#popup-arabic {
+  font-family: "Scheherazade", "Amiri", "Traditional Arabic", serif;
+}
+
+/* Root / grammar / bn text */
+#popup-root,
+#popup-grammar,
+#popup-bn {
+  display: block;
+}
+
+/* Make it mobile friendly */
+@media (max-width: 480px) {
+  .ayah-text {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+
+  .popup-card {
+    max-width: 100%;
+    padding: 0.9rem;
+  }
+
+  .popup-row {
+    font-size: 0.9rem;
+  }
+}
