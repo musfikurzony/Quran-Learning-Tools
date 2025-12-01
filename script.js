@@ -5,7 +5,7 @@ const wordElements = document.querySelectorAll('.word');
 const popupOverlay = document.getElementById('popup-overlay');
 const popupArabic = document.getElementById('popup-arabic');
 const popupRoot = document.getElementById('popup-root');
-const popupGrammar = document.getElementById('popup-grammar');
+const popupAnalysis = document.getElementById('popup-analysis');
 const popupBn = document.getElementById('popup-bn');
 const popupCloseBtn = document.getElementById('popup-close');
 
@@ -13,12 +13,12 @@ const popupCloseBtn = document.getElementById('popup-close');
 function openPopup(wordEl) {
   const arabic = wordEl.dataset.arabic || '';
   const root = wordEl.dataset.root || '';
-  const grammar = wordEl.dataset.grammar || '';
+  const analysis = wordEl.dataset.analysis || '';
   const bn = wordEl.dataset.bn || '';
 
   popupArabic.textContent = arabic;
   popupRoot.textContent = root;
-  popupGrammar.textContent = grammar;
+  popupAnalysis.textContent = analysis;
   popupBn.textContent = bn;
 
   popupOverlay.classList.remove('hidden');
@@ -39,13 +39,12 @@ popupCloseBtn.addEventListener('click', closePopup);
 
 // Click outside the popup-card closes overlay
 popupOverlay.addEventListener('click', (event) => {
-  // if click is directly on overlay (not inside card)
   if (event.target === popupOverlay) {
     closePopup();
   }
 });
 
-// (Optional) Escape key to close popup on desktop
+// Escape key to close popup on desktop
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     closePopup();
